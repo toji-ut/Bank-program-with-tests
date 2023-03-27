@@ -46,8 +46,6 @@ public class Bank {
         return result;
     }
 
-
-
     public int getNumOfAccounts() {
         return numOfAccounts;
     }
