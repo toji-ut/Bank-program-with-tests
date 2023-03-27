@@ -39,12 +39,13 @@ public class Bank {
     }
 
     public String toString() {
-        StringBuilder result = new StringBuilder("Bank name: " + nameOfBank + "\n");
+        String result = "Bank name: " + nameOfBank + "\n";
         for (int i = 0; i < numOfAccounts; i++) {
-            result.append(accounts[i].toString()).append("\n");
+            result += accounts[i].toString() + "\n";
         }
-        return result.toString();
+        return result;
     }
+
 
 
     public int getNumOfAccounts() {
