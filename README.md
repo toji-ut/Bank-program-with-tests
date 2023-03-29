@@ -34,7 +34,7 @@ Methods:
 
 
 Checking (subclass of Account)
-# Checking, which has an attribute overdraftMaximum and overrides the withdraw method of Account so that it checks whether the amount to be withdrawn exceeds the balance by more than overdraftMaximum; if so, it does not perform the withdrawal; otherwise, it performs the withdrawal. For example, if the balance is 100.00, and the account is a regular account (no overdraft protection), then the account holder can withdraw up to 100.00; if the balance is 100.00, and the account has overdraft protection with an overdraft maximum of 50.00, then the account holder can withdraw up to 150.00.
+Checking, which has an attribute overdraftMaximum and overrides the withdraw method of Account so that it checks whether the amount to be withdrawn exceeds the balance by more than overdraftMaximum; if so, it does not perform the withdrawal; otherwise, it performs the withdrawal. For example, if the balance is 100.00, and the account is a regular account (no overdraft protection), then the account holder can withdraw up to 100.00; if the balance is 100.00, and the account has overdraft protection with an overdraft maximum of 50.00, then the account holder can withdraw up to 150.00.
 
 Initialized: 
   - name : String
