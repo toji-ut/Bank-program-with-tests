@@ -7,8 +7,10 @@ Test driven development of a Bank Program using JUnit
 Initialized: 
   - dollars : int
   - cents : int
+
 Constructor: 
   + Money (int, int)
+
 Methods: 
   + getDollars() : int
   + getCents() : int
@@ -26,8 +28,10 @@ AccountTest and Account. Using the test-first approach. Deposit method, calls a 
   - name : String
   - id : String
   - balance : Money
+
 Constructor: 
   + Account (String, String, Money)
+
 Methods: 
   + deposit (Money)
   + withdraw (Money)
@@ -44,8 +48,10 @@ Initialized:
   - name : String
   - id : String
   - balance : Money
+
 Constructor:
   + Checking (String, String, Money, Money) 
+
 Methods: 
   + withdraw
 
@@ -56,12 +62,15 @@ Methods:
 BankTest and Bank. According to the test-first approach, a test case should be written before the code that makes that test pass. 
 For the Bank, included operations for adding a new account to its array of accounts, depositing an amount to a given account (according to its id number), and withdrawing an amount from a given account (according to its id number). Given an account id number, the search method should return the account (in the array accounts) that has that id number. The constructor takes in a string representing the name of the bank, allocates storage for the array (each element of which is a reference to an Account object), and initializes the number of accounts to 0.
 The deposit and withdraw methods of the Bank use the search method of ADT Bank as a helper method to first find the account to update within the array of accounts; once the account is found, it is then updated via a call to the deposit or withdraw method of the ADT Account.
+
 Initilized
   - nameOfBank : String
   - accounts : Account[]
   - numOfAccounts : int
+
 Constructor:
   + Bank (String)
+
 Methods:
 + addAccount (Account)
 + search (String) : Account 
