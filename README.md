@@ -1,5 +1,4 @@
-# Bank-program-with-tests
-Test driven development of a Bank Program using JUnit
+# Test driven development of an ATM program using JUnit
 
 
 #Money program
