@@ -52,6 +52,23 @@ public class BankTest {
     }
 
     @Test
+    public void testSortAccounts() {
+        Bank bank = new Bank("Bank of Kazakhstan");
+        bank.addAccount(new Account("Elias Ryker", "229", new Money(1735, 00)));
+        bank.addAccount(new Account("Bob Smith", "789", new Money(75, 90)));
+        bank.addAccount(new Account("John Doe", "123", new Money(100, 50)));
+        bank.addAccount(new Checking("Jane Doe", "456", new Money(50, 70), new Money(100, 50)));
+        bank.sortAccounts();
+        String expected = """
+                Bank name: Bank of Kazakhstan
+                John Doe (123): $100.50
+                Elias Ryker (229): $1735.00
+                Jane Doe (456): $50.70
+                Bob Smith (789): $75.90
+                """;
+        assertEquals(expected, bank.toString());
+    }
+    @Test
     public void testToString() {
         Bank bank = new Bank("Bank of Kazakhstan");
         Account account1 = new Account("Alice", "001", new Money(100, 0));
