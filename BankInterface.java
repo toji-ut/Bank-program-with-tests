@@ -8,6 +8,7 @@ public interface BankInterface {
     public void withdraw(String id, Money amount);
 
     public void sortAccounts();
+    
     public String toString();
 
     public int getNumOfAccounts();
