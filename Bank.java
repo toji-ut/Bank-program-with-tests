@@ -1,4 +1,4 @@
-public class Bank {
+public class Bank implements BankInterface{
 
     String nameOfBank;
     private Account[] accounts;
@@ -44,6 +44,10 @@ public class Bank {
             result += accounts[i].toString() + "\n";
         }
         return result;
+    }
+
+    public void sortAccounts(){
+        SortsClass.selectionSort(accounts, numOfAccounts);
     }
 
     public int getNumOfAccounts() {
