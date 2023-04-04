@@ -39,11 +39,11 @@ public class Bank implements BankInterface{
     }
 
     public String toString() {
-        String result = "Bank name: " + nameOfBank + "\n";
+        StringBuilder result = new StringBuilder("Bank name: " + nameOfBank + "\n");
         for (int i = 0; i < numOfAccounts; i++) {
-            result += accounts[i].toString() + "\n";
+            result.append(accounts[i].toString()).append("\n");
         }
-        return result;
+        return result.toString();
     }
 
     public void sortAccounts(){
