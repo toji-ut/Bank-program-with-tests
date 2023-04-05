@@ -1,4 +1,4 @@
-# Test driven development of an ATM program using JUnit
+# Test driven development of a Bank program using JUnit
 
 I worked on implementing an ATM program using JUnit and followed the test-driven development approach. The program consisted of 4 classes: Money, Account, and Checking, SortClass with Bank as the main class.
 
@@ -14,4 +14,4 @@ The BankInterface is defined with comments and headers for each public method. T
 
 A sortAccounts method is defined and tested in the Bank class. This method calls one of the sorting methods of SortsClass.java, which expects an array of type Comparable as a parameter. Since the Bank class will be sorting an array of Account objects, the Account class must implement the Comparable interface (public class Account implements Comparable) which is predefined and override the compareTo method in the Account class. The compareTo method compares two Account objects and returns 0 if this.id is the same as o.id, -1 if this.id < o.id, and 1 if this.id > o.id. The precondition for the compareTo method is that the parameter o is an Object of type Account, and the postcondition is that it returns a value indicating the comparison result.
 
-Overall, I enjoyed working on this program as it allowed me to practice my skills in test-driven development and object-oriented programming.
+Overall, I enjoyed working on this project as it allowed me to practice my skills in test-driven development and object-oriented programming.
