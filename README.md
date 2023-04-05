@@ -1,6 +1,6 @@
 # Test driven development of a Bank program using JUnit
 
-I worked on implementing an ATM program using JUnit and followed the test-driven development approach. The program consisted of 4 classes: Money, Account, and Checking, SortClass with Bank as the main class.
+I worked on implementing an ATM program using JUnit and followed the test-driven development approach. The program consisted of 4 classes: Money, Account, and Checking, SortClass, and Bank.
 
 In the Money class, I defined the attributes dollars and cents and implemented methods to get and manipulate these attributes. I also implemented a method to compare two Money objects.
 
