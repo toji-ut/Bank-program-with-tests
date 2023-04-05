@@ -14,19 +14,4 @@ The BankInterface is defined with comments and headers for each public method. T
 
 A sortAccounts method is defined and tested in the Bank class. This method calls one of the sorting methods of SortsClass.java, which expects an array of type Comparable as a parameter. Since the Bank class will be sorting an array of Account objects, the Account class must implement the Comparable interface (public class Account implements Comparable) which is predefined and override the compareTo method in the Account class. The compareTo method compares two Account objects and returns 0 if this.id is the same as o.id, -1 if this.id < o.id, and 1 if this.id > o.id. The precondition for the compareTo method is that the parameter o is an Object of type Account, and the postcondition is that it returns a value indicating the comparison result.
 
-// compareTo: compare two Account objects.
-// Precondition: parameter o is an Object (of type Account)
-// Postcondition: return 0 if this.id is the same as o.id, -1 if this.id < o.id, 1 if this.id > o.id.
-@Override
-public int compareTo(Object o)
-{
-if (o instanceof Account) {
-...
-}
-
-// o is not an Account ...
-}
-
-By doing this, I was able to compare two Account objects and ensure that the sorting method works properly.
-
 Overall, I enjoyed working on this program as it allowed me to practice my skills in test-driven development and object-oriented programming.
