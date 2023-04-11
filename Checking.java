@@ -15,7 +15,8 @@ public class Checking extends Account {
         if (getBalance().add(overdraftMaximum).compareTo(amount) >= 0) {
             super.withdraw(amount);
         } else {
-            System.out.println("Withdrawal amount exceeds available balance with overdraft protection.");
+            //System.out.println("Withdrawal amount exceeds available balance with overdraft protection.");
+            throw new InsufficientFundsException("Withdrawal amount exceeds available balance with overdraft protection.");
         }
     }
 }
