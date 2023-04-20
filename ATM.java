@@ -21,7 +21,7 @@ public class ATM {
             // Read user input.
             String id = readUserID(ioh);
             // Echo user input.
-            ioh.put("You entered " + id);
+            ioh.put("You entered: " + id);
 
             if (isValid(bank, id)) {
                 System.out.println("Account FOUND for ID: " + id);
