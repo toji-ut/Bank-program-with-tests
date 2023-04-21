@@ -25,6 +25,7 @@ public class ATM {
 
             if (isValid(bank, id)) {
                 System.out.println("Account FOUND for ID: " + id);
+                System.out.println(bank.search(id));
             } else {
                 System.out.println("Account NOT FOUND for ID: " + id);
             }
@@ -50,14 +51,12 @@ public class ATM {
         Scanner inputSource = new Scanner(new File(fileName));
 
         // while there are more tokens to read from the input source...
-        // **** INSERT CODE FOR BOOLEAN EXPRESSION: THERE IS MORE TO READ FROM THE INPUT SOURCE i.e. call hasNext() method on Scanner object ****
         while (inputSource.hasNext()) {
 
             // Read one line of input from the file into an Account object
             Account account = InputManager.readOneAccountFrom(inputSource);
 
             // Store the account info in the bank.
-            // **** INSERT CODE TO ADD acct TO THE BANK ****
             bank.addAccount(account);
 
         } // end while
