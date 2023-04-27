@@ -1,8 +1,10 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.FileWriter;
 
-import static org.junit.Assert.assertEquals;
+// import static org.junit.Assert.assertEquals;
 
 // Driver class for Bank project
 
@@ -13,6 +15,8 @@ public class ATM {
             // Read data from a file into a Bank.
             // Each line of the file has info for one account.
             BankInterface bank = readFromFile("accounts_list.txt");
+
+            bank.sortAccounts();
 
             // Print all the data stored in the bank.
             System.out.println(bank);
@@ -29,6 +33,8 @@ public class ATM {
             } else {
                 System.out.println("Account NOT FOUND for ID: " + id);
             }
+
+            writeToFile("output_list.txt", bank);
         } // end try
         catch (IOException ioe) {
             System.out.println("IOException in main: " + ioe.getMessage());
@@ -78,5 +84,23 @@ public class ATM {
 
     public static boolean isValid(BankInterface bank, String id) {
         return bank.search(id) != null;
-    } // end ATM
-}
+    }
+
+    /**
+     * writeToFile:
+     *
+     * @param output filename
+     * @param bank
+     * @return nothing
+     *
+     * Precondition: the accounts are already sorted within the bank
+     */
+    public static void writeToFile(String fileName, BankInterface bank) throws IOException {
+        PrintWriter output = new PrintWriter(new FileWriter(fileName));
+
+        output.printf(bank.toString());
+
+        output.close();
+    }
+
+} // end ATM
