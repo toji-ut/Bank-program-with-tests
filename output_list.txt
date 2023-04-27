@@ -1,0 +1,6 @@
+Bank name: Bank of Kazakhstan
+Onkar Dhillon (12345): $9999.99
+Jane Smith (69713): $40.00
+Ted Murphy (72354): $102.56
+Anakin Skywalker (77777): $90000.00
+Edward Doe (93757): $759.32
