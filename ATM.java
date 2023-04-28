@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.FileWriter;
+
 public class ATM {
     /**
      * Main method of the program.
@@ -43,7 +44,8 @@ public class ATM {
             } while (true);
 
             // Prompt user to choose a transaction type until they choose to quit.
-            label:
+            boolean exit = false;
+
             do {
                 // Read user input.
                 transactionType = ioh.get("Please enter a transaction type (check balance (1) / deposit (2) / withdraw (3) / quit (4)): ");
@@ -83,15 +85,15 @@ public class ATM {
                     // Quit.
                     case "4":
                         ioh.put("Thank you for using our ATM. Goodbye!");
-                        break label;
-
+                        exit = true;
+                        break;
 
                     // Invalid transaction type.
                     default:
                         ioh.put("Invalid transaction type: " + transactionType);
                         break;
                 }
-            } while (true);
+            } while (!exit);
 
             writeToFile("output_list.txt", bank);
         } catch (IOException ioe) {
