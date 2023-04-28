@@ -53,8 +53,8 @@ public class ATM {
                 // Normalize transaction type to lowercase.
                 transactionType = transactionType.toLowerCase();
 
-                // Check balance.
                 switch (transactionType) {
+                    // Check balance.
                     case "1": {
                         ioh.put(bank.search(id).toString());
                         break;
@@ -96,6 +96,7 @@ public class ATM {
             } while (!exit);
 
             writeToFile("output_list.txt", bank);
+
         } catch (IOException ioe) {
             System.out.println("IOException in main: " + ioe.getMessage());
             ioe.printStackTrace();
