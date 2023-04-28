@@ -144,7 +144,7 @@ public class ATM {
 
     public static Money readMoney(IOHandlerInterface ioh) {
         String input = ioh.get("Please enter the amount to deposit (in the format x.xx): ");
-        int dollars = 0, cents = 0;
+        int dollars, cents;
         try {
             String[] parts = input.split("\\.");
             if (parts.length == 2) {
