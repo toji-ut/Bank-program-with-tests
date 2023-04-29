@@ -1,5 +1,17 @@
-Ted Murphy, 72354, 102, 56
-Jane Smith, 69713, 40, 00
-Edward Doe, 93757, 759, 32
-Anakin Skywalker, 77777, 100000, 00
-Onkar Dhillon, 12345, 9999, 99
+Ted Murphy, 72354, 102, 56, r
+Jane Smith, 69713, 40, 00, r
+Edward Doe, 93757, 759, 32, r
+Anakin Skywalker, 77777, 100000, 00, r
+Onkar Dhillon, 12345, 9999, 99, r
+Dias Utebekov, 22922, 7535, 53, r
+Elona Muja, 21314, 29000, 00, r
+Ethan Harris, 82746, 480, 23, r
+Lily Chen, 29563, 6200, 12, r
+Adam Rodriguez, 69128, 20, 97, r
+Olivia Jones, 45821, 4021, 53, r
+Xavier Patel, 12549, 103, 87, r
+Nadia Khan, 87236, 100, 00, c, 50, 00
+Leo Kim, 36481, 76, 54, c, 100, 00
+Sophie Davis, 93572, 130, 68, c, 50, 00
+Joshua Brown, 71286, 2222, 11, r, 50, 00
+Maya Singh, 28475, 777, 00, r
