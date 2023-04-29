@@ -54,4 +54,8 @@ public class Bank implements BankInterface{
         return numOfAccounts;
     }
 
+    public String getNameOfBank() {
+        return null;
+    }
+
 }
