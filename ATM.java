@@ -139,12 +139,12 @@ public class ATM {
     public static void withdraw(BankInterface bank, String id, IOHandlerInterface ioh) {
         Account account = bank.search(id);
         Money amount = readMoney(ioh);
-        if (account instanceof Checking Checking) {
-            if (Checking.getBalance().compareTo(amount) >= 0 || Checking.getBalance().add(Checking.getOverdraftMaximum()).compareTo(amount) >= 0) {
-                Checking.withdraw(amount);
-                ioh.put("Withdrawal successful. New balance for account (" + Checking.getId() + "): " + Checking.getBalance());
+        if (account instanceof Checking checking) {
+            if (checking.getBalance().compareTo(amount) >= 0 || checking.getBalance().add(checking.getOverdraftMaximum()).compareTo(amount) >= 0) {
+                checking.withdraw(amount);
+                ioh.put("Withdrawal successful. New balance for account (" + checking.getId() + "): " + checking.getBalance());
             } else {
-                ioh.put("Withdrawal failed. Insufficient funds in account (" + Checking.getId() + ").");
+                ioh.put("Withdrawal failed. Insufficient funds in account (" + checking.getId() + ").");
             }
         } else {
             if (account.getBalance().compareTo(amount) >= 0) {
@@ -155,8 +155,7 @@ public class ATM {
             }
         }
     }
-
-
+    
     public static String getTransaction(IOHandlerInterface ioh) {
         String transactionType = ioh.get("Please enter a transaction type (check balance (1) / deposit (2) / withdraw (3) / quit (4)): ");
 
