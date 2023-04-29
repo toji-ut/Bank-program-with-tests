@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public interface BankInterface {
 
     /**
@@ -43,4 +45,11 @@ public interface BankInterface {
      * @return Number of accounts in the bank
      */
     public int getNumOfAccounts();
+
+    /**
+     * Returns a name of the bank
+     * @return name of the bank
+     */
+    public String getNameOfBank();
+
 }
