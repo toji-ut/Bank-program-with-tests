@@ -48,50 +48,32 @@ public class ATM {
 
             do {
                 // Read user input.
-                transactionType = ioh.get("Please enter a transaction type (check balance (1) / deposit (2) / withdraw (3) / quit (4)): ");
-
-                // Normalize transaction type to lowercase.
-                transactionType = transactionType.toLowerCase();
+                transactionType = getTransaction(ioh);
 
                 switch (transactionType) {
                     // Check balance.
-                    case "1": {
-                        ioh.put(bank.search(id).toString());
-                        break;
+                    case "1" -> {
+                        checkBalance(bank, id, ioh);
                     }
 
                     // Deposit.
-                    case "2": {
-                        Account account = bank.search(id);
-                        Money amount = readMoney(ioh);
-                        account.deposit(amount);
-                        ioh.put("Deposit successful. New balance for account (" + account.getId() + "): " + account.getBalance());
-                        break;
+                    case "2" -> {
+                        deposit(bank, id, ioh);
                     }
 
                     // Withdraw.
-                    case "3": {
-                        Account account = bank.search(id);
-                        Money amount = readMoney(ioh);
-                        if (account.getBalance().compareTo(amount) >= 0) {
-                            account.withdraw(amount);
-                            ioh.put("Withdrawal successful. New balance for account (" + account.getId() + "): " + account.getBalance());
-                        } else {
-                            ioh.put("Withdrawal failed. Insufficient funds in account (" + account.getId() + ").");
-                        }
-                        break;
+                    case "3" -> {
+                        withdraw(bank, id, ioh);
                     }
 
                     // Quit.
-                    case "4":
+                    case "4" -> {
                         ioh.put("Thank you for using our ATM. Goodbye!");
                         exit = true;
-                        break;
+                    }
 
                     // Invalid transaction type.
-                    default:
-                        ioh.put("Invalid transaction type: " + transactionType);
-                        break;
+                    default -> ioh.put("Invalid transaction type: " + transactionType);
                 }
             } while (!exit);
 
@@ -141,6 +123,47 @@ public class ATM {
 
     public static boolean isValid(BankInterface bank, String id) {
         return bank.search(id) != null;
+    }
+
+    public static void checkBalance(BankInterface bank, String id, IOHandlerInterface ioh) {
+        ioh.put(bank.search(id).toString());
+    }
+
+    public static void deposit(BankInterface bank, String id, IOHandlerInterface ioh) {
+        Account account = bank.search(id);
+        Money amount = readMoney(ioh);
+        account.deposit(amount);
+        ioh.put("Deposit successful. New balance for account (" + account.getId() + "): " + account.getBalance());
+    }
+
+    public static void withdraw(BankInterface bank, String id, IOHandlerInterface ioh) {
+        Account account = bank.search(id);
+        Money amount = readMoney(ioh);
+        if (account instanceof Checking Checking) {
+            if (Checking.getBalance().compareTo(amount) >= 0 || Checking.getBalance().add(Checking.getOverdraftMaximum()).compareTo(amount) >= 0) {
+                Checking.withdraw(amount);
+                ioh.put("Withdrawal successful. New balance for account (" + Checking.getId() + "): " + Checking.getBalance());
+            } else {
+                ioh.put("Withdrawal failed. Insufficient funds in account (" + Checking.getId() + ").");
+            }
+        } else {
+            if (account.getBalance().compareTo(amount) >= 0) {
+                account.withdraw(amount);
+                ioh.put("Withdrawal successful. New balance for account (" + account.getId() + "): " + account.getBalance());
+            } else {
+                ioh.put("Withdrawal failed. Insufficient funds in account (" + account.getId() + ").");
+            }
+        }
+    }
+
+
+    public static String getTransaction(IOHandlerInterface ioh) {
+        String transactionType = ioh.get("Please enter a transaction type (check balance (1) / deposit (2) / withdraw (3) / quit (4)): ");
+
+        // Normalize transaction type to lowercase.
+        transactionType = transactionType.toLowerCase();
+
+        return transactionType;
     }
 
     public static Money readMoney(IOHandlerInterface ioh) {
