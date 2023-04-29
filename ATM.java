@@ -133,7 +133,7 @@ public class ATM {
         Account account = bank.search(id);
         Money amount = readMoney(ioh);
         account.deposit(amount);
-        ioh.put("Deposit successful. New balance for account (" + account.getId() + "): " + account.getBalance());
+        ioh.put("Deposit successful. New balance for account (" + account.getId() + "): " + account.getBalance() + "\n");
     }
 
     public static void withdraw(BankInterface bank, String id, IOHandlerInterface ioh) {
@@ -142,20 +142,20 @@ public class ATM {
         if (account instanceof Checking checking) {
             if (checking.getBalance().compareTo(amount) >= 0 || checking.getBalance().add(checking.getOverdraftMaximum()).compareTo(amount) >= 0) {
                 checking.withdraw(amount);
-                ioh.put("Withdrawal successful. New balance for account (" + checking.getId() + "): " + checking.getBalance());
+                ioh.put("Withdrawal successful. New balance for account (" + checking.getId() + "): " + checking.getBalance() + "\n");
             } else {
-                ioh.put("Withdrawal failed. Insufficient funds in account (" + checking.getId() + ").");
+                ioh.put("Withdrawal failed. Insufficient funds in account (" + checking.getId() + ").\n");
             }
         } else {
             if (account.getBalance().compareTo(amount) >= 0) {
                 account.withdraw(amount);
-                ioh.put("Withdrawal successful. New balance for account (" + account.getId() + "): " + account.getBalance());
+                ioh.put("Withdrawal successful. New balance for account (" + account.getId() + "): " + account.getBalance() + "\n");
             } else {
-                ioh.put("Withdrawal failed. Insufficient funds in account (" + account.getId() + ").");
+                ioh.put("Withdrawal failed. Insufficient funds in account (" + account.getId() + ").\n");
             }
         }
     }
-    
+
     public static String getTransaction(IOHandlerInterface ioh) {
         String transactionType = ioh.get("Please enter a transaction type (check balance (1) / deposit (2) / withdraw (3) / quit (4)): ");
 
