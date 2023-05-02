@@ -15,3 +15,86 @@ Leo Kim, 36481, 76, 54, c, 100, 00
 Sophie Davis, 93572, 130, 68, c, 50, 00
 Joshua Brown, 71286, 2222, 11, r, 50, 00
 Maya Singh, 28475, 777, 00, r
+Peter Parker, 12345, 5000, 00, r
+Mary Jane, 54321, 700, 15, r
+Clark Kent, 98765, 5500, 87, r
+Bruce Wayne, 24680, 1000000, 00, r
+Barry Allen, 13579, 1500, 50, r
+Wally West, 97531, 100, 00, r
+Diana Prince, 24601, 5300, 20, r
+Hal Jordan, 10101, 3400, 10, r
+Arthur Curry, 45678, 12000, 00, r
+Peter Quill, 78901, 5000, 00, r
+Gamora Zen Whoberi Ben Titan, 45612, 3000, 00, r
+Drax The Destroyer, 95173, 2000, 00, r
+Groot, 35746, 1000, 00, r
+Rocket Raccoon, 15963, 1500, 00, r
+Tony Stark, 25836, 1000000, 00, r
+Steve Rogers, 36912, 5000, 00, r
+Thor Odinson, 14789, 12000, 00, r
+Natasha Romanoff, 78912, 8000, 00, r
+Clint Barton, 36987, 6500, 00, r
+Scott Lang, 95178, 4000, 00, r
+Hope van Dyne, 12369, 5000, 00, r
+Wanda Maximoff, 14785, 9000, 00, r
+Vision, 36987, 10000, 00, r
+T'Challa, 95123, 7000, 00, r
+Shuri, 45623, 5000, 00, r
+Okoye, 78923, 4000, 00, r
+Sam Wilson, 12358, 4500, 00, r
+Daniel Lee, 63519, 50, 30, r
+Sophie Chen, 92986, 8800, 20, r
+Emma Davis, 23819, 390, 90, r
+Michael Johnson, 45992, 100, 00, c, 50, 00
+Ethan Lee, 84739, 290, 05, c, 50, 00
+Mia Patel, 52781, 1725, 00, r
+William Park, 36612, 700, 85, r
+Madison Rodriguez, 10483, 308, 03, r
+Jayden Hernandez, 31268, 50, 00, c, 50, 00
+Sophia Kim, 59826, 1750, 90, r
+Alexander Lee, 71395, 567, 77, r
+Isabella Wilson, 82549, 4321, 23, r
+Andrew Chen, 46922, 60, 10, r
+Elizabeth Martin, 94738, 10, 00, c, 50, 00
+Benjamin Wright, 27642, 900, 00, c, 50, 00
+Victoria Taylor, 65511, 29, 63, r
+Nathan Davis, 83476, 300, 40, r
+Natalie Thomas, 12974, 540, 00, c, 50, 00
+Christian Lee, 59039, 280, 17, r
+Abigail Wilson, 32756, 10, 20, r
+Alexander Martinez, 84511, 908, 70, r
+Mia Perez, 22213, 123, 45, r
+Nicholas Anderson, 73812, 709, 30, r
+Emily Thomas, 49736, 75, 00, c, 50, 00
+Benjamin Harris, 18742, 40, 10, r
+Avery Wilson, 89021, 60, 00, c, 50, 00
+David Lee, 36709, 130, 27, r
+Sofia Martinez, 77236, 999, 00, c, 50, 00
+Brandon Wilson, 24350, 610, 00, c, 50, 00
+Julia Lee, 63981, 840, 00, c, 50, 00
+Dylan Davis, 73495, 239, 50, r
+Lily Wilson, 29362, 47, 10, r
+Samuel Lee, 83125, 305, 87, r
+Zoey Taylor, 52711, 12, 00, c, 50, 00
+William Garcia, 91148, 30, 00, c, 50, 00
+Chloe Wilson, 18726, 50, 10, r
+James Chen, 95922, 1500, 10, r
+Harper Anderson, 26837, 600, 00, c, 50, 00
+Sarah Johnson, 12346, 550, 34, r
+Lucas Perez, 88888, 20000, 00, r
+Cristina Martinez, 99123, 7000, 00, r
+Nina Anderson, 78965, 100, 50, c, 50, 00
+Tom Ford, 65432, 1031, 23, r
+Luna Rodriguez, 11111, 530, 76, r
+Grace Chen, 45678, 1220, 01, r
+Bryan Lee, 98765, 4500, 00, c, 50, 00
+Rebecca Carter, 55555, 200, 00, r
+Paul Kim, 44444, 2000, 00, r
+Hannah Brown, 77777, 150, 15, c, 50, 00
+Mia Davis, 12121, 180, 59, c, 50, 00
+David Wilson, 44433, 900, 30, r
+Liam Campbell, 19191, 580, 60, r
+Maggie Thompson, 77222, 870, 50, c, 50, 00
+Oscar Ramirez, 45688, 2700, 00, r
+Jackie Chan, 13222, 40000, 00, r
+Luke Nguyen, 88877, 30, 00, c, 50, 00
