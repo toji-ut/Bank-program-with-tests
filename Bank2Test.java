@@ -30,6 +30,7 @@ public class Bank2Test {
         Account account = new Account("Mary", "67890", new Money(200, 0));
         bank.addAccount(account);
         assertEquals(account, bank.search("67890"));
+        assertNull(bank.search("57364"));
     }
 
     @Test
