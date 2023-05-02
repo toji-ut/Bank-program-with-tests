@@ -16,12 +16,12 @@ public class Bank implements BankInterface{
     }
 
     public Account search(String id) {
-        for (int i = 0; i < numOfAccounts; i++) {
-            if (accounts[i].getId().equals(id)) {
-                return accounts[i];
-            }
+        int index = BinarySearchWithArray.binarySearchWithArray(accounts, 0, numOfAccounts-1, id);
+        if (index == -1) {
+            return null;
+        } else {
+            return accounts[index];
         }
-        return null;
     }
 
     public void deposit(String id, Money amount) {
