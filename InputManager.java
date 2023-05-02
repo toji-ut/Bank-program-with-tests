@@ -16,7 +16,7 @@ public class InputManager {
      */
     public static Account readOneAccountFrom(Scanner inputSource) {
         // Read one line of account data into oneLine
-        System.out.println("Reading: id, name, balance, account type, overdraft maximum...");
+        System.out.println("Reading: id, name, balance...");
         String oneLine = inputSource.nextLine();
 
         // Parse line of account data, separated by commas
