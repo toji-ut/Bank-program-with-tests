@@ -18,12 +18,12 @@ public class Bank2 implements BankInterface{
     }
 
     public Account search(String id) {
-        for (int i = 0; i < numOfAccounts; i++) {
-            if (accounts.get(i).getId().equals(id)) {
-                return accounts.get(i);
-            }
+        int index = BinarySearchWithArrayList.binarySearchWithArrayList(accounts, 0, accounts.size()-1, id);
+        if (index == -1) {
+            return null;
+        } else {
+            return accounts.get(index);
         }
-        return null;
     }
 
     public void deposit(String id, Money amount) {
