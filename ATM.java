@@ -126,7 +126,7 @@ public class ATM {
     }
 
     public static void checkBalance(BankInterface bank, String id, IOHandlerInterface ioh) {
-        ioh.put(bank.search(id).toString());
+        ioh.put(bank.search(id).toString() + "\n");
     }
 
     public static void deposit(BankInterface bank, String id, IOHandlerInterface ioh) {
@@ -166,7 +166,7 @@ public class ATM {
     }
 
     public static Money readMoney(IOHandlerInterface ioh) {
-        String input = ioh.get("Please enter the amount to deposit (in the format x.xx): ");
+        String input = ioh.get("Please enter the amount (in the format x.xx): ");
         int dollars, cents;
         try {
             String[] parts = input.split("\\.");
