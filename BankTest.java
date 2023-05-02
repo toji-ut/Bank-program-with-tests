@@ -26,9 +26,11 @@ public class BankTest {
     @Test
     public void testSearch() {
         Bank bank = new Bank("Bank of Kazakhstan");
-        Account account = new Account("Mary", "67890", new Money(200, 0));
-        bank.addAccount(account);
-        assertEquals(account, bank.search("67890"));
+        Account account1 = new Account("Mary", "67890", new Money(200, 0));
+        bank.addAccount(account1);
+        assertEquals(account1, bank.search("67890"));
+        assertNull(bank.search("54324"));
+
     }
 
     @Test
