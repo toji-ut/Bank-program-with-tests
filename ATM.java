@@ -25,7 +25,8 @@ public class ATM {
             // Print all the data stored in the bank.
             System.out.println(bank);
 
-            IOHandlerInterface ioh = new IOHandlerStandard();
+            IOHandlerInterface ioh = new IOHandlerDialog();
+
             String id, transactionType;
 
             // Read user input.
@@ -52,19 +53,13 @@ public class ATM {
 
                 switch (transactionType) {
                     // Check balance.
-                    case "1" -> {
-                        checkBalance(bank, id, ioh);
-                    }
+                    case "1" -> checkBalance(bank, id, ioh);
 
                     // Deposit.
-                    case "2" -> {
-                        deposit(bank, id, ioh);
-                    }
+                    case "2" -> deposit(bank, id, ioh);
 
                     // Withdraw.
-                    case "3" -> {
-                        withdraw(bank, id, ioh);
-                    }
+                    case "3" -> withdraw(bank, id, ioh);
 
                     // Quit.
                     case "4" -> {
@@ -114,21 +109,52 @@ public class ATM {
     /**
      * readUserID:
      *
-     * @param IOHandlerInterface ioh
-     * @return String id read from user.
+     * @param IOHandlerInterface ioh An IOHandlerInterface object to get user input
+     * @return String The ID entered by the user
+     *
+     * Prompts the user to enter their ID and returns it as a String.
      */
     public static String readUserID(IOHandlerInterface ioh) {
         return ioh.get("Please enter your ID or 'quit': ");
     }
 
+    /**
+     * isValid:
+     *
+     * @param BankInterface bank A BankInterface object
+     * @param String id The ID to check
+     * @return boolean Returns true if the ID is valid, false otherwise
+     *
+     * Checks whether the given ID is valid in the given bank.
+     */
     public static boolean isValid(BankInterface bank, String id) {
         return bank.search(id) != null;
     }
 
+    /**
+     * checkBalance:
+     *
+     * @param BankInterface bank A BankInterface object
+     * @param String id The ID of the account to check
+     * @param IOHandlerInterface ioh An IOHandlerInterface object to output the balance
+     * @return void
+     *
+     * Retrieves the account with the given ID from the given bank and outputs its balance using the given IOHandlerInterface object.
+     */
     public static void checkBalance(BankInterface bank, String id, IOHandlerInterface ioh) {
         ioh.put(bank.search(id).toString() + "\n");
     }
 
+    /**
+     * deposit:
+     *
+     * @param BankInterface bank A BankInterface object
+     * @param String id The ID of the account to deposit to
+     * @param IOHandlerInterface ioh An IOHandlerInterface object to get input and output
+     * @return void
+     *
+     * Retrieves the account with the given ID from the given bank and prompts the user to enter an amount to deposit. Deposits the given amount to the account and outputs the new balance using the given IOHandlerInterface object.
+     */
     public static void deposit(BankInterface bank, String id, IOHandlerInterface ioh) {
         Account account = bank.search(id);
         Money amount = readMoney(ioh);
@@ -136,6 +162,16 @@ public class ATM {
         ioh.put("Deposit successful. New balance for account (" + account.getId() + "): " + account.getBalance() + "\n");
     }
 
+    /**
+     * withdraw:
+     *
+     * @param BankInterface bank A BankInterface object
+     * @param String id The ID of the account to withdraw from
+     * @param IOHandlerInterface ioh An IOHandlerInterface object to get input and output
+     * @return void
+     *
+     * Retrieves the account with the given ID from the given bank and prompts the user to enter an amount to withdraw. Withdraws the given amount from the account and outputs the new balance using the given IOHandlerInterface object.
+     */
     public static void withdraw(BankInterface bank, String id, IOHandlerInterface ioh) {
         Account account = bank.search(id);
         Money amount = readMoney(ioh);
@@ -156,6 +192,14 @@ public class ATM {
         }
     }
 
+    /**
+     * getTransaction:
+     *
+     * @param IOHandlerInterface ioh An IOHandlerInterface object to get input
+     * @return String The transaction type entered by the user
+     *
+     * Prompts the user to enter a transaction type and returns it as a String. The returned value will be one of "check balance", "deposit", "withdraw", or "quit".
+     */
     public static String getTransaction(IOHandlerInterface ioh) {
         String transactionType = ioh.get("Please enter a transaction type (check balance (1) / deposit (2) / withdraw (3) / quit (4)): ");
 
@@ -165,6 +209,14 @@ public class ATM {
         return transactionType;
     }
 
+    /**
+     * readMoney:
+     *
+     * @param IOHandlerInterface ioh An IOHandlerInterface object to get input and output
+     * @return Money The amount entered by the user as a Money object
+     *
+     * Prompts the user to enter an amount in the format "x.xx" and returns it as a Money object.
+     */
     public static Money readMoney(IOHandlerInterface ioh) {
         String input = ioh.get("Please enter the amount (in the format x.xx): ");
         int dollars, cents;
@@ -189,11 +241,11 @@ public class ATM {
     /**
      * writeToFile:
      *
-     * @param output filename
-     * @param bank
-     * @return nothing
+     * @param String fileName The name of the file to write to
+     * @param BankInterface bank A BankInterface object to write to the file
+     * @throws IOException
      *
-     * Precondition: the accounts are already sorted within the bank
+     * Writes the contents of the given bank to a file with the given file name. The accounts in the bank must be sorted beforehand.
      */
     public static void writeToFile(String fileName, BankInterface bank) throws IOException {
         PrintWriter output = new PrintWriter(new FileWriter(fileName));
