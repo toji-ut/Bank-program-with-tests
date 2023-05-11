@@ -16,4 +16,11 @@ I have completed the main part of the project, which involved designing and impl
 
 To ensure the stability of the application, I have also handled exceptions appropriately. In the event that an exception is thrown, the program will not crash. Instead, the exception will be caught and the account will remain unchanged while the user receives a message indicating the error.
 
+To run the program, either download the whole project from Github and run the ATM main class, or alternatively you may run the jar file. 
+Make sure that you have downloaded the account_list.txt and output_list.txt before running the jar file.
+
+Upon running the program, the choice you will receive is to enter you ID or quit. Since we do not have a database, we use an account_list.txt file as our database of accounts. I made a 100 random accounts using ChatGPT by prompting it to generate 100 accounts in a specific format (FirstName LastName, id number, balance (dollars), balance (cents), regular/checking account, (if checking), overdraft maximum). For example: Olivia Jones, 45821, 4021, 53, r or Nadia Khan, 87236, 100, 00, c, 50, 00.
+
+Then when the ATM class is ran, it reads the file and adds all of the accounts into an ArrayList of Accounts. When the user enters their ID, it is validated that it exists, and then user gets a choice of three transactions (if ID doesn't exist, the error message appears and check balance (1) / deposit (2) / withdraw (3) / quit (4). Checking balance simply prints out your balance, depositing and withdrawing will prompt the user for an amount and the transaction will go through accordingly, and quitting thanks the user and exits the program. 
+
 Thank you for taking the time to read about my project. I hope you found it informative and interesting.
