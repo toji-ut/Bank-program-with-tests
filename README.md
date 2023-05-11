@@ -1,8 +1,10 @@
 # Test driven development of a Bank program using JUnit
 
-I worked on implementing a Bank program using Test Driven Development approach using JUnit. The program consists of 4 concrete classes, Money class, Account class, Checking class, SortClass class, and Bank class with complimentary test classes. Also an interface BankInterface.
+Hello there! I am pleased to present to you my project for CSC 175 Intermediate Programming in Spring 2023. For this project, I had to build upon my knowledge and experience from previous lab exercises and examples of Dialog Boxes and File I/O.
 
-In the Money class, I defined the attributes dollars and cents and implemented methods to get and manipulate these attributes. I also implemented a method to compare two Money objects.
+To begin with, I implemented a Bank program using Test Driven Development approach using JUnit. The program consists of 4 concrete classes, namely Money class, Account class, Checking class, SortClass class, and Bank class with complimentary test classes. I also created an interface BankInterface to define the comments and signatures of the methods.
+
+In the Money class, I defined the attributes dollars and cents and implemented methods to get and manipulate these attributes. Additionally, I implemented a method to compare two Money objects.
 
 For the Account class, I used the test-first approach and wrote the test cases before implementing the deposit, withdraw, and transfer methods. The deposit method calls the add method of the Money class, and transfer between accounts is implemented as a deposit to one account and a withdrawal from another.
 
@@ -10,8 +12,10 @@ In the Checking class, which is a subclass of Account, I added an attribute over
 
 In the Bank class, I implemented methods to add a new account, deposit an amount to a given account, and withdraw an amount from a given account using the search method to find the account in the accounts array. The constructor takes in a string representing the name of the bank and initializes the accounts array and the number of accounts.
 
-The BankInterface is defined with comments and headers for each public method. The header of the concrete Bank class is modified to say "public class Bank implements BankInterface { ... }." The existing tests in BankTest are compiled and run, and they work as before.
+Moving forward, the main part of the project was to design and implement a bank ATM driver class with methods for reading account information into a Bank object from a file, asking the user to login by entering id, validating id, asking the user to enter a transaction, validating the transaction, executing the transaction, and writing all account information in sorted ascending order of account ids to an output file. I used dialog boxes and standard input for asking the user to login and enter a transaction.
 
-A sortAccounts method is defined and tested in the Bank class. This method calls one of the sorting methods of SortsClass.java, which expects an array of type Comparable as a parameter. Since the Bank class will be sorting an array of Account objects, the Account class must implement the Comparable interface (public class Account implements Comparable) which is predefined and override the compareTo method in the Account class. The compareTo method compares two Account objects and returns 0 if this.id is the same as o.id, -1 if this.id < o.id, and 1 if this.id > o.id. The precondition for the compareTo method is that the parameter o is an Object of type Account, and the postcondition is that it returns a value indicating the comparison result.
+Once the above was working, I incorporated overdraft protection by introducing a subclass of Account called Checking, which has an instance variable overdraftMaximum and overrides the withdraw method of Account so that it checks whether the amount to be withdrawn exceeds the balance by more than overdraftMaximum. If so, it throws an exception: InsufficientFundsException; otherwise, it performs the withdrawal.
 
-Overall, I enjoyed working on this project as it allowed me to practice my skills in test-driven development and object-oriented programming.
+Finally, I ensured that the application does not crash upon an exception being thrown; rather it should be caught and handled appropriately (i.e. no change to the account and a message to the user).
+
+Thank you for taking the time to read about my project. I hope you found it informative and interesting.
