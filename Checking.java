@@ -19,4 +19,8 @@ public class Checking extends Account {
             throw new InsufficientFundsException("Withdrawal amount exceeds available balance with overdraft protection.");
         }
     }
+
+    public String toString() {
+        return super.toString() + " (Overdraft Max: " + this.overdraftMaximum + ")";
+    }
 }
